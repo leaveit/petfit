@@ -1,0 +1,30 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#basics" aria-controls="basics" role="tab" data-toggle="tab">My Pet&nbsp;&nbsp;&nbsp;</a></li>
+    <li role="presentation"><a href="#wdev" aria-controls="wdev" role="tab" data-toggle="tab">News&nbsp;&nbsp;&nbsp;</a></li>
+    <li role="presentation"><a href="#dan" aria-controls="dan" role="tab" data-toggle="tab">Contact Your Vet&nbsp;&nbsp;&nbsp;</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+	<div class="tab-content">
+	  <div role="tabpanel" class="tab-pane fade in active" id="basics">
+	  	<ul>
+	  		{% for t in TOPIC_DICT["My Pet"] %}
+	  			<li><a href="{{t[1]}}">{{t[0]}}</a></li>
+	  		{% endfor %}
+	  	</ul>
+	  </div>
+	  <div role="tabpanel" class="tab-pane fade" id="wdev">web dev</div>
+	  <div role="tabpanel" class="tab-pane fade" id="dan">dfasjas</div>
+
+	</div>
+
+</div>
+
+{% endblock %}
